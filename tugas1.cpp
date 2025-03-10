@@ -9,7 +9,7 @@ struct data_roti {
     float harga;
 };
 
-const int n = 4; // Jumlah roti
+const int n = 4; 
 
 data_roti Roti[n] = {
     {"Roti Tawar", 101, 15000},
@@ -22,10 +22,11 @@ void tampilkanData() {
     cout << "\nDaftar Roti:\n";
     cout << "No  | "  << setw(12) << left << "Nama " << "| Kode " << "| Harga " << endl;
     cout << "------------------------------------------------" << endl;
+    data_roti *ptr = Roti;
     for (int i = 0; i < n; i++) {
-        cout << i + 1 << "    | " << setw(12) << left << Roti[i].nama
-             << " | " << left << Roti[i].kode
-             << " | " << left << Roti[i].harga << endl;
+        cout << i + 1 << "    | " << setw(12) << left << (ptr+i)->nama
+             << " | " << left << (ptr+i)->kode
+             << " | " << left << (ptr+i)->harga << endl;
     }
 }
 
